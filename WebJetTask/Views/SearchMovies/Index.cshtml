@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section HeaderScripts
+{
+}
+<div ng-app="MovieApp">
+    <div ng-controller="MovieController" class="row">
+        <div class="col-md-4 pull-left">
+            <br />
+            <div class="input-group col-md-12 row ">
+
+                <input type='text' ng-model="SearchInput" class="form-control remove-left-margin" />
+                <span class="input-group-btn">
+                    <input type="button" class="btn btn-success remove-left-margin" ng-click="SearchNow()" value="Search" />
+                </span>
+            </div>
+            <hr />
+            <ul class="list-group MovieList">
+                <li ng-repeat="EachMovie in Movies" class="list-group-item" ng-click="SelectMovie(EachMovie)">
+                    <span>{{ EachMovie.Title  }}</span>
+                </li>
+            </ul>
+            <div class="Message padding-s">
+                <h4>Information</h4>
+                <hr />
+                {{Message}}
+            </div>
+        </div>
+        <div class="col-md-8 pull-right BestMovies" ng-cloak ng-show="BestMovie != null">
+
+            <ul class="list-group">
+
+
+                <li class="list-group-item">     <div class="col-md-12"><h1>Price : {{BestMovie.Price}} from ({{BestMovie.MovieProvider}})</h1></div>                   </li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Title</div><div class='col-md-8 pull-right'>{{BestMovie.Title}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Year</div><div class='col-md-8 pull-right'>{{BestMovie.Year}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Rated</div><div class='col-md-8 pull-right'>{{BestMovie.Rated}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Released</div><div class='col-md-8 pull-right'>{{BestMovie.Released}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Runtime</div><div class='col-md-8 pull-right'>{{BestMovie.Runtime}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Genre</div><div class='col-md-8 pull-right'>{{BestMovie.Genre}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Director</div><div class='col-md-8 pull-right'>{{BestMovie.Director}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Writer</div><div class='col-md-8 pull-right'>{{BestMovie.Writer}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Actors</div><div class='col-md-8 pull-right'>{{BestMovie.Actors}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Plot</div><div class='col-md-8 pull-right'>{{BestMovie.Plot}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Language</div><div class='col-md-8 pull-right'>{{BestMovie.Language}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Country</div><div class='col-md-8 pull-right'>{{BestMovie.Country}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Poster</div><div class='col-md-8 pull-right'>{{BestMovie.Poster}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Metascore</div><div class='col-md-8 pull-right'>{{BestMovie.Metascore}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Rating</div><div class='col-md-8 pull-right'>{{BestMovie.Rating}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Votes</div><div class='col-md-8 pull-right'>{{BestMovie.Votes}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>ID</div><div class='col-md-8 pull-right'>{{BestMovie.ID}}</div></li>
+                <li class="list-group-item"><div class='col-md-4 pull-left'>Type</div><div class='col-md-8 pull-right'>{{BestMovie.Type}}</div></li>
+
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+</div> 
+@section BodyScripts
+{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+    @Scripts.Render("~/bundles/movies")
+
+
+}

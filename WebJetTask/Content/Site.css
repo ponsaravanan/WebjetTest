@@ -1,0 +1,68 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family:Quicksand;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+ 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+
+.MovieList li:hover {
+    background-color:silver;
+    cursor:pointer;
+    cursor:hand;
+}
+
+.BestMovies li
+{
+    overflow:hidden;
+    
+}
+div{
+    overflow:hidden;
+}
+
+.navbar-brand
+{
+    color:white;
+    font-weight:bold;
+}
+/*******************************    Loading panel        ************************************/
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal {
+    display: block;
+}
+
+.padding-s{
+    padding:10px;
+}
+
+.Message{
+    background-color:#ffffcc;
+}

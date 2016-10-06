@@ -1,0 +1,11 @@
+﻿Using webapi to communicate with external movie db api
+The access token is not shown to public anyway in scripts
+AngularJs is used to access webapi
+used javascript to sort and get the best price from angular controller
+if services failed then there is a message in the information div beneath the list of movies
+
+/******************************************/
+Assumed the as requirements 
+1) user seearches the movie and find in the movie list(minimum of the sources to be reacheable)
+2) clicking the movie reveals the movie details
+3) the best rate is displayed even if the other source is down 
